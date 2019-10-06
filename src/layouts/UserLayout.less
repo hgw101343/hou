@@ -1,0 +1,145 @@
+@import '~antd/es/style/themes/default.less';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	overflow: auto;
+	background: @layout-body-background;
+}
+
+:global {
+	.basicLayout {
+		.ant-menu-item .anticon,
+		.ant-menu-submenu-title .anticon {
+			font-size: @font-size-lg;
+		}
+
+		.ant-menu {
+			font-size: @font-size-lg;
+
+			.ant-menu-inline,
+			.ant-menu-submenu {
+				.ant-menu-item {
+					font-size: @font-size-lg;
+				}
+
+				.ant-menu-submenu-title {
+					font-size: @font-size-lg;
+				}
+			}
+		}
+
+		.ant-layout {
+			.ant-layout-content {
+				.ant-pro-page-header-wrap-page-header-warp {
+					.ant-page-header {
+						padding: 17px 29px;
+
+						.ant-breadcrumb {
+							font-size: @font-size-lg;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.header {
+	width: 100%;
+	height: 96px;
+	background: #fff;
+	padding: 25px 0 25px 10%;
+
+	.title {
+		height: 47px;
+
+		img {
+			height: 100%;
+		}
+
+		span {
+			font-size: 20px;
+			vertical-align: bottom;
+			padding-bottom: 5px;
+			margin-left: 6px;
+			display: inline-block;
+			color: rgba(0, 0, 0, 0.85);
+			line-height: 28px;
+			font-weight: 600;
+		}
+	}
+}
+
+.registerHeader {
+	width: 100%;
+	height: 64px;
+	background: #fff;
+	padding: 22px 0;
+
+	.title {
+		height: 20px;
+		margin: 0 auto;
+		width: 1128px;
+
+		img {
+			height: 100%;
+		}
+
+		span {
+			font-size: @font-size-lg+2;
+			font-weight: 500;
+			color: rgba(0, 0, 0, 0.85);
+			line-height: 20px;
+			margin-left: 8px;
+		}
+	}
+}
+
+.footerContainer {
+	height: 64px;
+	line-height: 64px;
+	font-size: @font-size-sm;
+	text-align: center;
+	background: #fff;
+}
+
+.menuLogo {
+	height: 22px;
+	line-height: 22px;
+	text-align: left;
+	margin: 21px 0;
+
+	img {
+		height: 100%;
+	}
+
+	h1 {
+		font-size: 16px;
+		font-weight: normal;
+	}
+}
+
+@media (min-width: @screen-md-min) {
+	.container {
+		// background-image: url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg');
+		// background-repeat: no-repeat;
+		// background-position: center 110px;
+		// background-size: 100%;
+		background: #FFF;
+	}
+}
+
+@media (max-width: @screen-md) {
+	.content {
+		padding-right: 0;
+		justify-content: center;
+	}
+
+	.footerContainer {
+		height: auto;
+		line-height: 2;
+		padding: 10px 0;
+	}
+}

@@ -1,0 +1,254 @@
+@import '~antd/es/style/themes/default.less';
+@import '../../../../../../utils/utils.less';
+.commoditySellInfo {
+    .title {
+        padding: 16px 24px;
+        background:rgba(250,250,250,1);
+        border-radius: 4px 4px 0px 0px;
+        border: 1px solid rgba(0,0,0,0.09);
+        font-size: 14px;
+        font-family: PingFangSC;
+        font-weight: bold;
+        color:rgba(0,0,0,0.85);
+    }
+
+    .sellInfo {
+        padding: 16px 0 16px 24px;
+
+        .formTitle {
+            font-family:PingFangSC-Regular,PingFangSC;
+            color:rgba(0,0,0,0.85);
+            width: 72px;
+            flex: 0 0 72px;
+            text-align: left;
+        }
+
+        .requireTitle {
+            position: relative;
+            &::before {
+                position: absolute;
+                top: 0;
+                left: -8px;
+                display: inline-block;
+                margin-right: 4px;
+                color: #f5222d;
+                font-size: 12px;
+                font-family: SimSun, sans-serif;
+                line-height: 1;
+                content: '*';
+            }
+        }
+
+        .shopDetail {
+            align-items: flex-start;
+            .shopDetailInfo {
+                flex: 1;
+                border-radius:4px 4px 0px 0px;
+                border: 1px solid rgba(0,0,0,0.09);
+                padding: 16px 0;
+                position: relative;
+
+                :global {
+                    .ant-form-item {
+                        margin-bottom: 0;
+                        .ant-form-item-control {
+                            line-height: 1.5
+                        }
+                    }
+                    .ant-input-number {
+                        width: 100%;
+                    }
+                }
+
+                .shopDetailInfoItem {
+                    box-sizing: border-box;
+                    margin-right: 2.5%;
+                    width: 9.8%;
+                    flex:1;
+                    p {
+                        font-family:PingFangSC-Regular,PingFangSC;
+                        color:rgba(0,0,0,0.65);
+                        margin-bottom: 33px;
+                        span {
+                            font-family:PingFangSC-Regular,PingFangSC;
+                            color:rgba(245,34,45,1);
+                        }
+                    }
+
+                    &:nth-child(1) {
+                        margin-left: 2.5%;
+                    }
+                    &:nth-child(2) {
+                        width: 14.6%;
+                        margin-right: 8%;
+                    }
+                }
+
+                .lineBorder {
+                    position: absolute;
+                    left: 0;
+                    top: 50px;
+                    width: 100%;
+                    height:1px;
+                    background:rgba(232,232,232,1);
+                }
+            }
+        }
+
+        .shopSpecifications {
+            margin-top: 16px;
+            align-items: flex-start;
+            .shopSpecificationsInfo {
+                flex: 1;
+                &p:nth-child(1) {
+                    font-family:PingFangSC-Regular,PingFangSC;
+                    color:rgba(0,0,0,0.45);
+                    margin-bottom: 16px;
+                }
+                
+                .shopSpecificationsInfoList {
+                    >div {
+						margin-bottom: 18px;
+                        border-radius:4px 4px 0px 0px;
+						border:1px solid rgba(0,0,0,0.09);
+						animation: bounceIn 0.3s both;
+                        .shopSpecificationsInfoListHeader {
+                            background:rgba(243,248,255,1);
+                            border-bottom: 1px solid rgba(232,232,232,1);
+                            padding: 10px 48px 10px 24px;
+                            a {
+                                color: @primary-color;
+                            }
+                            :global {
+                                .ant-form-item {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+
+                        .shopSpecificationsInfoListContent {
+                            padding: 24px;
+                            >ul {
+                                margin-bottom: 24px;
+                                li {
+                                    padding: 0 12px;
+                                    text-align: center;
+                                    font-family:PingFangSC-Regular,PingFangSC;
+                                    color:#000;
+                                    border:1px solid rgba(0,0,0,0.15);
+                                    width: 104px;
+                                    line-height: 32px;
+									margin-right: 24px;
+									position: relative;
+									animation: bounceInOut 0.5s both;
+									p {
+										margin-bottom: 0px;
+									}
+									div {
+										position: absolute;
+										right: -6px;
+										top: -16px;
+										font-size: 14px;
+										display: none;
+										cursor: pointer;
+									}
+									&:hover div{
+										display: block;
+									}
+                                }
+                            }
+                            >div {
+                                :global {
+                                    .ant-form-item {
+                                        margin-bottom: 0px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .shopSpecificationsInfoBtn {
+                    width: 240px;
+                    text-align: left;
+                }
+            }
+		}
+
+		.shopSkuDetail {
+			margin-top: 24px;
+			align-items: flex-start;
+			>div {
+				flex: 1;
+				border:1px solid #e8e8e8;
+                border-bottom: none;
+                
+                .skuColumn {
+                    color:rgba(0,0,0,0.85);
+                }
+
+                :global {
+                    .ant-input-number {
+                        width: 100%;
+                        .ant-input-number-handler-wrap {
+                            display: none;
+                        }
+                    }
+                    .ant-upload.ant-upload-select-picture-card{
+                        margin-right: 0px;
+                        margin-bottom: 0px;
+                    }
+                    .ant-upload-list-picture-card .ant-upload-list-item{
+                        margin: 0px;
+                    }
+                    
+                    .ant-upload-list .ant-upload-list-picture-card {
+                        margin: 0px;
+                    }
+
+                    .ant-input, .ant-input-number, .ant-input-number-focused, .ant-input-number-input-wrap, .ant-input-number-input{
+                        border: none;
+                        box-shadow: none;
+                        outline: none;
+                        color: rgba(0,0,0,0.25);
+                        &:focus {
+                            box-shadow: none;
+                            border: none;
+                            outline: none;
+                            color: rgba(0,0,0,1);
+                        }
+
+                        &:hover {
+                            box-shadow: none;
+                            border: none;
+                            outline: none;
+                        }
+                    }
+
+                    .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
+                        background: #FFF;
+                    }
+
+                    .ant-table-thead {
+                        >tr {
+                            >th:nth-child(1) {
+                                border-right: 1px solid #e8e8e8;
+                            }
+                        }
+                    }
+                    .ant-table-row  {
+                        td[rowspan]{
+                            border-right: 1px solid #e8e8e8;
+                        }
+                    }
+                }
+			}
+        }
+        
+        .shopInventory {
+            align-items: flex-start;
+            margin-top: 24px;
+        }
+    }
+}

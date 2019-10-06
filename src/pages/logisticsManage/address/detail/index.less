@@ -1,0 +1,69 @@
+.title {
+	font-size: 14px;
+	font-weight: 700;
+	color: rgba(0, 0, 0, 0.85);
+	line-height: 20px;
+}
+
+.layout {
+	padding: 16px 13px 30px;
+
+	:global {
+		.ant-form-item-label {
+			text-align: left;
+			line-height: 32px;
+		}
+
+		.ant-form-item {
+			width: 339px;
+			margin-right: 24px;
+			margin-bottom: 16px;
+
+			.ant-form-item-control {
+				line-height: 32px;
+			}
+
+			.has-error {
+				.ant-checkbox-input,
+				.ant-checkbox-inner {
+					border-color: #f5222d;
+				}
+			}
+		}
+	}
+
+	.steet {
+		width: 678px;
+	}
+
+	.toast {
+		&::before {
+			display: inline-block;
+			margin-right: 4px;
+			color: #f5222d;
+			font-size: 12px;
+			font-family: SimSun, sans-serif;
+			line-height: 1;
+			content: '*';
+		}
+	}
+
+	.prefix {
+		&::before {
+			content: '';
+			margin: 0 4px;
+			line-height: 32px;
+			width: 8px;
+			height: 1px;
+			display: inline-block;
+			vertical-align: middle;
+			background: rgba(0, 0, 0, 0.25);
+		}
+	}
+}
+
+.footerBtn {
+	text-align: center;
+	width: 100%;
+	margin: 72px 0;
+}

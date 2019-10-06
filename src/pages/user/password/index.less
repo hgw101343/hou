@@ -1,0 +1,73 @@
+@import '~antd/es/style/themes/default.less';
+
+.password {
+
+    .backIcon {
+        color: @primary-color;
+        padding: 16px 24px;
+        border-top: 1px solid #E3E3E3;
+        border-bottom: 1px solid #E3E3E3;
+        font-size: 14px;
+        :global {
+            .anticon-left {
+                color: #000000;
+            }
+        }
+    }
+
+    .content {
+        width: 600px;
+        margin: 52px auto;
+        .passwordTitle {
+            font-size:16px;
+            font-family:PingFangSC-Medium,PingFangSC;
+            font-weight:bold;
+            color:rgba(0,0,0,0.85);
+            margin-bottom: 48px;
+            text-align: center;
+            margin-left: 144px;
+            width: 312px;
+        }
+
+        :global {
+            .ant-form-item-label {
+                width: 120px;
+                margin-right: 24px;
+            }
+
+            .ant-form-item-control-wrapper {
+                width: 312px;
+            }
+
+            .ant-form-item {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+        }
+
+        .firetStep {
+            :global {
+                .ant-form-item-children {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+            }
+
+            .verCodeBtn {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .buttonWrap {
+        width: 600px;
+        margin: 0 auto;
+        .button {
+            width: 312px;
+            margin-left: 144px;
+        }
+    }
+    
+}

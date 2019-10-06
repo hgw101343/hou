@@ -1,0 +1,164 @@
+@import '~antd/es/style/themes/default.less';
+
+*,
+*:before,
+*:after {
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	margin-bottom: 0px;
+}
+
+ul {
+    list-style: none;
+}
+
+html,
+body,
+#root {
+	height: 100%;
+}
+
+.colorWeak {
+	filter: invert(80%);
+}
+
+.ant-layout {
+	min-height: 100vh;
+}
+
+canvas {
+	display: block;
+}
+
+body {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	min-width: 1280px;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+.ant-pro-grid-content {
+	overflow-x: auto;
+}
+
+.ant-pro-page-header-wrap-children-content {
+	min-width: 1128;
+}
+
+.ant-pro-top-nav-header-logo {
+	width: 180px !important;
+}
+
+.ant-btn {
+  margin-right: 8px;
+
+  &:last-child {
+    margin-right: 0px;
+  }
+}
+
+.ant-pro-setting-drawer-handle {
+	display: none !important;
+}
+
+.formLayout {
+  .btnArea {
+    float: right;
+  }
+
+  .ant-form-item-label {
+    text-align : left;
+    line-height: 32px;
+
+  }
+
+  .ant-form-item {
+    width        : 333px;
+    margin-right : 24px;
+    margin-bottom: 16px;
+
+    .ant-form-item-control {
+      line-height: 32px;
+    }
+  }
+}
+
+@media (max-width: @screen-xs) {
+	.ant-table {
+		width: 100%;
+		overflow-x: auto;
+
+		&-thead>tr,
+		&-tbody>tr {
+
+			>th,
+			>td {
+				white-space: pre;
+
+				>span {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.beyond-ellipsis {
+	//超出省略
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.flex-start {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.flex-end {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.flex-around {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.flex-column {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.flex-wrap-start {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+
+

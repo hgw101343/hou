@@ -1,0 +1,39 @@
+@import '~antd/es/style/themes/default.less';
+.editorWrapper {
+	border: 1px solid #d1d1d1;
+	border-radius: 5px;
+	width: 562.5px;
+	:global {
+		.bf-container .public-DraftEditor-content {
+			padding: 0;
+		}
+		.public-DraftStyleDefault-ltr{
+			// height: 5px;
+		}
+		
+		.bf-image {
+			font-size: 0;
+			width: 100%;
+			.bf-media-toolbar {
+				display: none !important;
+			}
+			.bf-csize-icon-right-bottom,  .bf-csize-icon-left-bottom{
+				display: none !important;
+			}
+			>div{
+				width: 100%;
+			}
+			img {
+				width: 100%;
+				box-sizing: border-box;
+				&:hover {
+					outline: none;
+				}
+			}
+		}
+	}
+	.editor {
+		width: 100%;
+		height: 1000.5px;
+	}
+}

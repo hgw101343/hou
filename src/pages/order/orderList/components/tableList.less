@@ -1,0 +1,171 @@
+@import '~antd/es/style/themes/default.less';
+
+.item {
+  flex   : auto;
+  display: flex;
+}
+
+.listWrap {
+
+  .listItemWrap {
+    margin-bottom: 16px;
+
+    :global(.ant-list-item) {
+      border       : 1px solid rgba(0, 0, 0, .09);
+      border-radius: 4px 4px 0px 0px;
+    }
+  }
+
+  .listHeader {
+    margin: 10px 0;
+    .item;
+    flex-direction: row;
+    border-radius : 4px 4px 0px 0px;
+    border        : 1px solid rgba(0, 0, 0, 0.09);
+    overflow-x    : auto;
+
+    :global(.ant-checkbox-wrapper) {
+      align-self : center;
+      margin-left: 10px;
+    }
+
+    .goodsTitle,
+    .centextTitle {
+      padding: 16px 24px;
+      .item;
+      flex-direction: row;
+
+      div {
+        width       : 100px;
+        flex        : auto;
+        text-align  : left;
+        color       : rgba(0, 0, 0, .85);
+        font-weight : 700;
+        margin-right: 24px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .goodsTitle {
+      padding-right: 0px;
+    }
+
+    .shop {
+      width: 200px;
+      flex : auto;
+    }
+  }
+
+  .listItem {
+    width     : 100%;
+    overflow-x: auto;
+
+    :global(.ant-checkbox-wrapper) {
+      align-self : center;
+      margin-left: 10px;
+    }
+
+    .goods {
+      .item;
+      flex-direction: column;
+      border-right  : 1px solid rgba(0, 0, 0, 0.09);
+      padding       : 16px 24px;
+      padding-right : 0px;
+
+      .goodsWraps {
+        width: 100%;
+        .item;
+        flex-direction : row;
+        justify-content: flex-start;
+        align-items    : flex-start;
+
+        .goodsItem {
+          flex        : auto;
+          text-align  : left;
+          width       : 100px;
+          margin-right: 24px;
+          line-height : 22px;
+          word-wrap   : break-word;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          :global(.ant-avatar-image) {
+            border: 1px solid rgba(0, 0, 0, 0.09);
+          }
+        }
+      }
+
+      .goodsWraps:last-child {
+        :global(.ant-list-item-meta) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .context {
+      .item;
+      flex-direction: row;
+      padding       : 16px 24px;
+
+      .contextItem {
+        flex        : auto;
+        width       : 100px;
+        text-align  : left;
+        word-break  : break-all;
+        margin-right: 24px;
+        line-height : 22px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  :global {
+    .ant-list-item {
+      justify-content           : space-between;
+      align-items               : flex-start;
+      border                    : 1px solid @border-color-split;
+      border-bottom-right-radius: @border-radius-base;
+      border-bottom-left-radius : @border-radius-base;
+      padding                   : 0;
+
+      .ant-list-item-meta {
+        flex         : auto;
+        margin-bottom: 10px;
+
+        .ant-list-item-meta-content {
+          text-align: left;
+
+          .ant-list-item-meta-title {
+            line-height: 22px;
+            font-weight: 400;
+            color      : rgba(0, 0, 0, 0.85);
+          }
+
+          .ant-list-item-meta-description {
+            line-height: 22px;
+            font-weight: 400;
+            color      : rgba(0, 0, 0, 0.85);
+          }
+        }
+      }
+    }
+
+    .ant-list-item:last-child {
+      border-bottom: 1px solid @border-color-split;
+    }
+
+    .ant-pagination-total-text {
+      float: left;
+      color: rgba(0, 0, 0, 0.45)
+    }
+  }
+
+}

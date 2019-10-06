@@ -1,0 +1,59 @@
+@import '~antd/es/style/themes/default.less';
+
+.commodityOtherInfo {
+    .title {
+        padding: 16px 24px;
+        background:rgba(250,250,250,1);
+        border-radius: 4px 4px 0px 0px;
+        border: 1px solid rgba(0,0,0,0.09);
+        font-size: 14px;
+        font-family: PingFangSC;
+        font-weight: bold;
+        color:rgba(0,0,0,0.85);
+    }
+    
+    .otherInfo {
+        padding: 16px 0 16px 24px;
+
+        p {
+            margin-bottom: 0px;
+        }
+
+        .formTitle {
+            font-family:PingFangSC-Regular,PingFangSC;
+            color:rgba(0,0,0,0.85);
+            width: 72px;
+            flex: 0 0 72px;
+            text-align: left;
+        }
+
+        .requireTitle {
+            position: relative;
+            &::before {
+                position: absolute;
+                top: 0;
+                left: -8px;
+                display: inline-block;
+                margin-right: 4px;
+                color: #f5222d;
+                font-size: 12px;
+                font-family: SimSun, sans-serif;
+                line-height: 1;
+                content: '*';
+            }
+        }
+
+        .otherInfoPostFeeTemplate {
+            .otherInfoPostFeeTemplateBtn {
+                margin-right: 16px;
+                &:nth-child(2) {
+                    margin-left: 72px;
+                }
+            }
+        }
+
+        .otherInfoIssue {
+            margin-top: 24px;
+        }
+    }
+}

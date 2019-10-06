@@ -1,0 +1,38 @@
+@import '~antd/es/style/themes/default.less';
+
+.searchForm {
+    .submitButtons {
+        display: block;
+        white-space: nowrap;
+    }
+
+    :global {
+        .ant-form-item {
+            margin: 0 24px 16px 0;
+            width: 312px;
+
+            .ant-form-item-label {
+                width: 72px;
+                text-align: left;
+
+                label {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+
+            .ant-form-item-control-wrapper {
+                width: 240px;
+            }
+
+            .ant-input-number {
+                width: 100%;
+            }
+		}
+
+		.ant-calendar-picker {
+			width: 100%;
+		}
+    }
+}

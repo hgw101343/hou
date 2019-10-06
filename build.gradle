@@ -1,0 +1,91 @@
+apply plugin: "org.hidetake.ssh"
+
+ext {
+    ISOFFICIAL = "$isOfficial"
+    if (ISOFFICIAL.contains("false")) {
+        //配置测试服务器
+        remotes {
+            server {
+                host = '106.14.162.219'
+                user = 'xmiles'
+                password = '74Da2k5G!74spAKY'
+                keepAliveSec = 30
+                knownHosts = allowAnyHosts
+            }
+        }
+    }else if (ISOFFICIAL.contains("prerelease")) {
+        //配置预发布服务器
+        remotes {
+            server {
+                host = '106.14.162.219'
+                user = 'xmiles'
+                password = '74Da2k5G!74spAKY'
+                keepAliveSec = 30
+                knownHosts = allowAnyHosts
+            }
+        }
+    } else{
+        //配置正式服务器
+        remotes {
+            server {
+                host = '106.14.162.219'
+                user = 'xmiles'
+                password = '74Da2k5G!74spAKY'
+                keepAliveSec = 30
+                knownHosts = allowAnyHosts
+            }
+        }
+    }
+    
+    execStepTest = [
+       'cd /data/node/frontend_qu_service_13363'
+       , 'source /etc/profile'
+       , 'tar -xzvf frontend_qu_service.tar.gz'
+       , 'cnpm i'
+       , 'export START_PORT=13363&&pm2 startOrReload start.config.js --env test'
+    ]
+    execStepPre = [
+       
+    ]
+    execStepOfficial = [
+       
+    ]
+}
+
+buildscript {
+    repositories {
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath 'org.hidetake:gradle-ssh-plugin:1.1.3'
+    }
+}
+
+task deployTest() << {
+	ssh.run {
+        session(remotes.server) {
+            execute (execStepTest.join(' && '), pty: true)
+            println("================操作成功================")
+        }
+    }
+}
+
+task deployPre() << {
+	ssh.run {
+        session(remotes.server) {
+            execute (execStepPre.join(' && '), pty: true)
+            println("================操作成功================")
+        }
+    }
+}
+
+task deployOfficial() << {
+	ssh.run {
+        session(remotes.server) {
+            execute (execStepOfficial.join(' && '), pty: true)
+            println("================操作成功================")
+        }
+    }
+}

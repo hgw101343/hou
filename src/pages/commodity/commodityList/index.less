@@ -1,0 +1,68 @@
+@import '~antd/es/style/themes/default.less';
+
+.commodityList {
+    font-size: @font-size-base;
+	position: relative;
+	padding-top: 42px;
+	:global {
+		.ant-card {
+			margin-bottom: 20px;
+
+			.ant-btn {
+				margin-right: 10px;
+			}
+		}
+	}
+
+    .tab {
+		background: #FFF;
+		position: absolute;
+		top: -24px;
+		left: -24px;
+		padding-left: 29px;
+		box-sizing: border-box;
+		width: calc(100% + 48px);
+		:global {
+			.ant-tabs-bar {
+				margin: 0px;
+			}
+		}
+    }
+
+	.tableList {
+		.tableListOperator {
+			margin-bottom: 16px;
+
+			button {
+				margin-right: 8px;
+			}
+		}
+	}
+
+	.tableShop {
+		.tableImg {
+            flex: 0 0 72px;
+			width: 72px;
+			height: 72px;
+			border-radius: 4px;
+			border: 1px solid rgba(0, 0, 0, 0.09);
+			margin-right: 12px;
+		}
+
+		.tableShopName {
+			align-items: flex-start;
+			justify-content: space-between;
+
+			p {
+				color: rgba(0, 0, 0, 0.85);
+				margin: 0;
+
+				&:nth-child(1) {
+					margin-bottom: 6px;
+				}
+			}
+
+		}
+	}
+
+}

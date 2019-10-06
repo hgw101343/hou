@@ -1,0 +1,291 @@
+@import '~antd/es/style/themes/default.less';
+
+.container {
+	width        : 1128px;
+	margin       : 16px auto 24px;
+	padding      : 24px 24px 0;
+	border-radius: 8px;
+	background   : #fff;
+	font-size    : @font-size-lg;
+
+	.help {
+		color: rgba(0, 0, 0, 0.45);
+	}
+
+	.formItemControlWrapperDiv {
+		line-height: 24px;
+	}
+
+	:global {
+		.ant-form {
+			.ant-form-item {
+				margin-bottom: 8px;
+
+				.ant-upload.ant-upload-select-picture-card,
+				.ant-upload-list-item {
+					margin: 0;
+
+					img {
+						width: 100%;
+					}
+				}
+
+				.ant-form-item-label {
+					word-break : break-all;
+					white-space: normal;
+					line-height: 1.2;
+					padding-top: 12px;
+				}
+
+				.ant-form-item-control-wrapper {
+					padding-left  : 24px;
+					min-height    : 32px;
+					vertical-align: center;
+
+					a {
+						margin-left: 24px;
+					}
+
+					.ant-upload-list-item-info {
+						a {
+							margin-left: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.IDCardForm {
+	:global {
+		.ant-form-inline {
+
+			.ant-form-item,
+			.ant-row {
+				margin-right: 4px;
+
+				.ant-form-item-control-wrapper {
+					padding-left: 0;
+				}
+			}
+		}
+	}
+}
+
+.typeRouteContent {
+	padding   : 0 24px;
+	text-align: center;
+	width     : 100%;
+
+	.title {
+		font-size  : 18px;
+		font-weight: 700;
+		color      : rgba(0, 0, 0, 0.85);
+		line-height: 25px;
+		margin     : 36px 0;
+	}
+
+	.cell {
+		border-radius: 8px;
+		text-align   : left;
+	}
+
+	.selectCart {
+		padding      : 6px 24px;
+		height       : 100%;
+		background   : #f7f7f7;
+		border-radius: 8px;
+
+		.typeTitle {
+			font-size  : @font-size-lg+2;
+			font-weight: 650;
+			color      : rgba(0, 0, 0, 0.85);
+			line-height: 22px;
+		}
+
+		.typeDesc {
+			font-size    : @font-size-lg;
+			font-weight  : 400;
+			color        : rgba(0, 0, 0, 0.65);
+			line-height  : 20px;
+			margin-bottom: 24px;
+		}
+
+		.typeItem {
+			width        : 100%;
+			height       : 40px;
+			line-height  : 40px;
+			margin       : 16px 0;
+			border-radius: 4px;
+			border       : 1px solid rgba(0, 0, 0, 0.15);
+			background   : #fff;
+			padding      : 0 23px;
+			cursor       : pointer;
+
+			.itemTitle {
+				font-size  : @font-size-lg;
+				font-weight: 600;
+				color      : rgba(0, 0, 0, 0.85);
+			}
+
+			.desc {
+				text-overflow: ellipsis;
+				word-wrap    : nowrap;
+				overflow     : hidden;
+			}
+		}
+
+		.selectedTypeItem {
+			border    : 1px solid rgba(64, 169, 255, 1);
+			box-shadow: 0 0 5px 2px #bae7ff;
+		}
+	}
+
+	.description {
+		background   : rgba(247, 247, 247, 1);
+		border-radius: 8px;
+		width        : 100%;
+		padding      : 23px 20px;
+		margin       : 15px 0 0;
+		line-height  : 24px;
+		color        : rgba(0, 0, 0, 0.65);
+		font-size    : @font-size-lg;
+		text-align   : left;
+
+		.descriptionTitle {
+			font-size  : @font-size-lg+2;
+			font-weight: 600;
+		}
+	}
+
+	.nextStep {
+		padding: 0 33px;
+		margin : 56px 0;
+	}
+}
+
+.plane {
+	width: 100%;
+
+	.planeTitle {
+		width        : 100%;
+		height       : 48px;
+		background   : rgba(250, 250, 250, 1);
+		border-radius: 4px 4px 0px 0px;
+		border       : 1px solid rgba(0, 0, 0, 0.09);
+		line-height  : 48px;
+		font-weight  : 700;
+		color        : rgba(0, 0, 0, 0.85);
+		padding      : 0 24px;
+	}
+
+	.planeContent {
+		width  : 100%;
+		padding: 24px 24px 12px;
+
+		.uploadWrap {}
+	}
+}
+
+.agreeDeal,
+.bottomBox {
+	margin-left: 180px;
+}
+
+.agreeDeal {
+	margin-top   : 30px;
+	margin-bottom: 24px;
+	line-height  : 22px;
+
+	&>span {
+		margin-left   : 8px;
+		vertical-align: middle;
+	}
+
+	a {
+		vertical-align: middle;
+	}
+
+	:global {
+		.ant-checkbox {
+			vertical-align: middle;
+		}
+	}
+}
+
+.bottomBox {
+	margin-bottom: 50px;
+}
+
+.modalWrap {
+	.ant-modal-title {
+		font-weight: 700;
+	}
+
+	p {
+		font-weight  : 400;
+		color        : rgba(0, 0, 0, 0.65);
+		line-height  : 20px;
+		font-size    : @font-size-lg;
+		margin-bottom: 0;
+	}
+}
+
+.trademark {
+	background   : rgba(250, 250, 250, 1);
+	border-radius: 8px;
+	width        : 720px;
+	padding      : 24px 0;
+	margin-top   : 8px;
+}
+
+.stepBtn {
+	width     : 100%;
+	margin    : 56px 0 91px;
+	text-align: center;
+}
+
+.PopoverContext {
+	font-size: @font-size-sm;
+	margin   : -4px -8px;
+
+	li {
+		list-style: none;
+		color     : rgba(0, 0, 0, 0.85);
+
+		span {
+			color: rgba(0, 0, 0, 0.45);
+		}
+	}
+}
+
+.modalMask {
+	position  : fixed;
+	top       : 0;
+	bottom    : 0;
+	right     : 0;
+	left      : 0;
+	background: rgba(0, 0, 0, 0.55);
+	text-align: center;
+
+	.modalTitle {
+		background : rgba(0, 0, 0, 0.3);
+		width      : 100%;
+		height     : 70px;
+		padding    : 24px;
+		line-height: 22px;
+		color      : rgba(255, 255, 255, 0.85);
+		font-size  : 16px;
+
+		.icon {
+			float      : right;
+			line-height: 22px;
+			cursor     : pointer;
+		}
+	}
+
+	.modalContent {
+		padding-top: 26px;
+	}
+}
