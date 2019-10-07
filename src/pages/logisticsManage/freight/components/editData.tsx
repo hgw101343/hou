@@ -3,7 +3,7 @@ import styles from '../index.less';
 import { Table, Input, InputNumber, Popconfirm, Form, Button, Modal, Icon, message } from 'antd';
 import { FormProps, FormComponentProps } from 'antd/es/form';
 import { StateType } from '@/pages/order/orderList/model';
-import { CommonUtils } from '@/utils/utils';
+import { CommonUtils, distinct } from '@/utils/utils';
 import { formatArea } from './changeAdress';
 import AddAdress from './adddress';
 const EditableContext = React.createContext<any>({});
@@ -117,6 +117,16 @@ class EditableTable extends React.Component<propsType3, stateType2> {
 				title: '可配送区域',
 				dataIndex: 'deliveryArea',
 				width: '40%',
+				render: text => {
+					let text1 = text
+					let arr = text.split(';')
+					let arr1 = arr.slice(0, -1);
+					let res = arr1.map(item => {
+						return <p>
+							{item}</p>
+					})
+					return res
+				},
 			},
 			{
 				title: '首件（个）',
@@ -237,6 +247,7 @@ class EditableTable extends React.Component<propsType3, stateType2> {
 		let data: any = [];
 		var index = index;
 		var args = args;
+		console.log('bbc');
 		// 如果有传参则是自传父
 		let arr = CommonUtils.deepCopy(this.state.allTemplate);
 		this.setState({
@@ -263,6 +274,7 @@ class EditableTable extends React.Component<propsType3, stateType2> {
 			if (!this.props.currentOn) {
 				console.log('aaa');
 			} else {
+				console.log('bbb', this.props.currentOn.deliveryDetailList);
 				// 如果是编辑
 				if (this.props.currentOn.deliveryDetailList) {
 					this.props.currentOn.deliveryDetailList.forEach((item2, index) => {
@@ -331,10 +343,17 @@ class EditableTable extends React.Component<propsType3, stateType2> {
 				type: 'freight/save1',
 				payload: { delDelivery: false },
 			});
-			this.props.dispatch({
-				type: 'freight/getFreight',
-				payload: {},
-			});
+			setTimeout(() => {
+				// 重新获取到值
+				this.props.dispatch({
+					type: 'freight/getFreight',
+					payload: {},
+				});
+				// 宏事件延迟渲染
+				setTimeout(() => {
+					this.init();
+				}, 300);
+			}, 300);
 			console.log(this.state.allTemplate, '全部');
 			const remain = this.state.allTemplate.filter(item => {
 				return item.id != this.state.onCurrent.id;
@@ -393,12 +412,12 @@ class EditableTable extends React.Component<propsType3, stateType2> {
 			});
 			this.setState({ editingKey: '', addstatus: false });
 		});
-		console.log('改变后', this.state.allTemplate);
+		message.success('更新成功');
 	}
 	onRow = (record: any, index: number) => {
 		return {
 			onClick: (event: any) => {
-				console.log('你点击了', record);
+				console.log('你点击了', record, record.key);
 				this.setState({
 					onCurrent: record,
 				});
@@ -422,7 +441,7 @@ class EditableTable extends React.Component<propsType3, stateType2> {
 		};
 	};
 	edit(key) {
-		console.log(key);
+		console.log(key, '修改', this.state.editingKey);
 		this.setState({ editingKey: key });
 	}
 	// 子传值父
@@ -510,7 +529,6 @@ class EditableTable extends React.Component<propsType3, stateType2> {
 					payload: {},
 				});
 			}, 300);
-
 			this.props.dispatch({
 				type: 'freight/save1',
 				payload: {

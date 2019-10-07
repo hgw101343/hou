@@ -65,7 +65,7 @@ export const formatArea = (deliveryAreaMap: any, AllAddress: any) => {
 						str += `${cityObj.label}、`;
 					}
 				});
-				str = str.slice(0, -1) + ';\n';
+				str = str.slice(0, -1) + ';';
 				break;
 			}
 		}

@@ -93,10 +93,12 @@ class Freight extends Component<propsType, stateType> {
 		};
 	}
 	init = () => {
-		this.props.dispatch({
-			type: 'freight/getFreight',
-			payload: {},
-		});
+		setTimeout(() => {
+			this.props.dispatch({
+				type: 'freight/getFreight',
+				payload: {},
+			});
+		}, 300);
 		this.props.dispatch({
 			type: 'freight/save1',
 			payload: {
@@ -215,7 +217,6 @@ class Freight extends Component<propsType, stateType> {
 		this.init();
 	};
 	componentDidMount() {
-		// console.log('222',this.props.freight.delDelivery)
 		this.init();
 		setTimeout(() => {
 			console.log('yuqing', this.props.freight.list);

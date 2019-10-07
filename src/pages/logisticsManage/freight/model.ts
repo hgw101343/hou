@@ -72,7 +72,7 @@ const Model: ModelType = {
 		delDelivery: false,
 	},
 	effects: {
-		*getFreight({}, { select, call, put }) {
+		*getFreight({ }, { select, call, put }) {
 			const pagination = yield select(({ freight }: any) => freight.pagination);
 			console.log('运费模板', pagination);
 			const data = yield call(query, pagination);
@@ -124,8 +124,8 @@ const Model: ModelType = {
 		*updateDelivery({ payload }, { call, put }) {
 			console.log(payload, '参数');
 			const data = yield call(update_delivery, payload);
-			console.log(data, payload, '更新');
-			message.success('更新成功');
+			// console.log(data, payload, '更新');
+			// message.success('更新成功');
 		},
 		*deleteTemplate({ payload }, { call, put, select }) {
 			console.log('怎么');

@@ -42,6 +42,8 @@ export default class AddAdress extends Component<propsType, stateType> {
 		saveDisabledArr: [],
 		//  当前父级版选中
 		halfChecked: [],
+		// 二级全选选中
+		arrFather: []
 	};
 	init = () => {
 		let selectArray: Array<string> = []; //记录所有选中的
@@ -58,7 +60,7 @@ export default class AddAdress extends Component<propsType, stateType> {
 			}
 		});
 		this.setState({
-			saveKey: [...selectArray, ...selectFather],
+			saveKey: [...selectArray]
 		});
 		console.log(selectArray, currentSelect, 'see');
 		// 编辑状态
@@ -71,7 +73,7 @@ export default class AddAdress extends Component<propsType, stateType> {
 				});
 			}
 			console.log('current', currentSelect, selectArray);
-			const arr = [...selectArray, ...currentSelect, ...selectFather];
+			const arr = [...selectArray, ...currentSelect];
 			this.setState({
 				checkedKeys: CommonUtils.distinct(arr),
 				currentCheck: [...currentSelect, ...selectFather],
@@ -106,11 +108,16 @@ export default class AddAdress extends Component<propsType, stateType> {
 	};
 
 	onCheck = (checkedKeys, halfChecked) => {
-		console.log('onCheck', checkedKeys, halfChecked);
-		this.setState({ checkedKeys: checkedKeys, halfChecked: halfChecked.halfCheckedKeys },
-			() => {
-				console.log('on', this.state.halfChecked);
-			});
+		let arr = checkedKeys.filter(item => {
+			return item > 99
+		})
+		let arrFather = checkedKeys.filter(item => {
+			return item < 100 && item >= 10
+		})
+		this.setState({
+			checkedKeys: arr, halfChecked: halfChecked.halfCheckedKeys,
+			arrFather: arrFather
+		});
 		console.log('why', this.state.checkedKeys, this.state.halfChecked);
 	};
 	// 将数组['1','1280','2','2312']转换成{1:[1280],2:[2312]}
@@ -121,10 +128,12 @@ export default class AddAdress extends Component<propsType, stateType> {
 		const arr2: Array<any> = [];
 		const newArr1 = arr1.filter(item => item > 100);
 		let newArr = arr1.filter(item => item < 100);
+		// 半选父级
 		const newArrHalf = this.state.halfChecked.filter(item => item > 10 && item < 100);
-		console.log(newArr, newArr1, 'ass', newArrHalf);
+		console.log(newArr, newArr1, 'ass', newArrHalf, ...this.state.arrFather);
+		console.log('aaa', this.state.checkedKeys);
 		// 如果城市在全选的情况下
-		newArr = [...newArr, ...newArrHalf];
+		newArr = [...newArr, ...newArrHalf, ...this.state.arrFather];
 		if (newArr.length > 0) {
 			newArr.forEach((item, index) => {
 				const newArr2 = arr1.filter(item2 => {
@@ -195,8 +204,6 @@ export default class AddAdress extends Component<propsType, stateType> {
 				});
 				obj = this.changeNum(arr);
 			}
-			console.log('当前选中', newSelect, obj);
-			console.log('编辑');
 			let obj2 = this.props.allTemplate;
 			obj2[this.props.editingKey].deliveryAreaId = obj;
 			if (
